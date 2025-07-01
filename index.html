@@ -10,6 +10,11 @@
 <body>
     <div class="container">
         <nav>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-list">
                 <li class="nav-item active" onclick="showPage('home')">Home</li>
                 <li class="nav-item" onclick="showPage('about')">About</li>
@@ -251,5 +256,12 @@
             event.target.classList.add('active');
         }
     </script>
+<script>
+  const hamburger = document.getElementById('hamburger-menu');
+  const navList = document.querySelector('.nav-list');
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('open');
+  });
+</script>
 </body>
 </html>
