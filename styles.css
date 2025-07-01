@@ -356,30 +356,59 @@
             }
         }
         
-        /* Responsive */
+        /* Responsive & Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            height: 4px;
+            width: 100%;
+            background: white;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.4s;
+        }
         @media (max-width: 768px) {
-            .container {
-                padding: 6px;
+            nav {
+                position: relative;
             }
-            .site-title {
-                font-size: 2rem;
-            }
-            .subtitle {
-                font-size: 1rem;
-            }
-            .page {
-                padding: 12px;
-                border-radius: 12px;
+            .hamburger {
+                display: flex;
             }
             .nav-list {
+                display: none;
                 flex-direction: column;
                 align-items: stretch;
                 gap: 10px;
+                background: rgba(30,30,30,0.98);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                border-radius: 0 0 15px 15px;
+                box-shadow: 0 8px 32px rgba(255,255,255,0.1);
+                z-index: 1000;
+            }
+            .nav-list.open {
+                display: flex;
             }
             .nav-item {
                 font-size: 1.1rem;
-                padding: 12px 0;
-                border-radius: 18px;
+                padding: 16px 0;
+                border-radius: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+            }
+            .nav-item:last-child {
+                border-bottom: none;
             }
             .social-links {
                 flex-wrap: wrap;
