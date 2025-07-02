@@ -166,6 +166,14 @@ footer, .footer, .mmm-footer {
   box-sizing: border-box;
 }
 
+.footer-social-links img, .footer-social-links a img, footer .social-link img {
+  filter: none !important;
+  transition: filter 0.2s;
+}
+.footer-social-links img:hover, .footer-social-links a:hover img, footer .social-link:hover img {
+  filter: brightness(1.2) !important;
+}
+
 /* --- END CONTAINER AND PAGE STYLES --- */
 
 
