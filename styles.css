@@ -1,4 +1,3 @@
-
 /* --- NAVIGATION BAR --- */
 .nav-bar-flex {
   background: #111;
@@ -120,6 +119,41 @@
 }
 
 /* --- END NAVIGATION BAR --- */
+
+/* --- CONTAINER AND PAGE STYLES --- */
+.container {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #181818;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 0 auto;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* --- FOOTER STYLES --- */
+footer, .footer, .mmm-footer {
+  margin-top: 0 !important;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  background: #111;
+  color: #aaa;
+  font-size: 0.95rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- END CONTAINER AND PAGE STYLES --- */
 
 
 
