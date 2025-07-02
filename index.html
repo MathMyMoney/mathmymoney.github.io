@@ -438,13 +438,14 @@
             // Show selected page
             document.getElementById(pageId).classList.add('active');
             // Add active class to clicked nav item
-            // Find the nav-item whose child <a> or itself matches the page
             navItems.forEach(item => {
                 const a = item.querySelector('a');
                 if ((a && a.getAttribute('href') === '#' + pageId) || (!a && item.textContent.trim().toLowerCase() === pageId)) {
                     item.classList.add('active');
                 }
             });
+            // Always scroll to top after navigation
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         }
         // Hash navigation support
         window.addEventListener('DOMContentLoaded', () => {
