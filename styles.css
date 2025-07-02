@@ -17,7 +17,7 @@ body, .container, .page {
 
 /* --- NAVIGATION BAR --- */
 .nav-bar-flex {
-  background: #232323;
+  background: #232323 !important;
   color: #fff;
   display: flex;
   align-items: center;
