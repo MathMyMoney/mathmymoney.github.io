@@ -5,38 +5,54 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 18px;
-    background: rgba(30, 30, 30, 0.98);
+    padding: 0 24px;
+    background: rgba(40, 40, 40, 0.98);
     backdrop-filter: blur(10px);
-    border-radius: 15px;
+    border-radius: 18px;
     margin-bottom: 8px;
-    box-shadow: 0 8px 32px rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
     position: relative;
-    min-height: 72px;
+    min-height: 96px;
+    transition: min-height 0.2s, padding 0.2s;
 }
 .nav-logo-box {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 80px;
 }
 /* Logo sizing for desktop */
 .nav-logo {
-    height: 48px;
+    height: 64px;
     width: auto;
-    max-width: 120px;
+    max-width: 160px;
     display: block;
+    transition: height 0.2s, max-width 0.2s;
 }
 @media (max-width: 900px) {
+    .nav-bar-flex {
+        min-height: 80px;
+        padding: 0 12px;
+    }
+    .nav-logo-box {
+        height: 60px;
+    }
     .nav-logo {
-        height: 36px;
-        max-width: 90px;
+        height: 48px;
+        max-width: 120px;
     }
 }
 @media (max-width: 600px) {
+    .nav-bar-flex {
+        min-height: 64px;
+        padding: 0 4px;
+    }
+    .nav-logo-box {
+        height: 44px;
+    }
     .nav-logo {
-        height: 28px;
-        max-width: 70px;
+        height: 36px;
+        max-width: 80px;
     }
 }
 .nav-center-box {
@@ -80,18 +96,16 @@
 }
 @media (max-width: 768px) {
     .nav-bar-flex {
-        flex-direction: row;
-        align-items: center;
-        padding: 0 2vw;
-        min-height: 64px;
-        background: rgba(30, 30, 30, 0.98);
+        min-height: 72px;
+        padding: 0 6px;
+        background: rgba(40, 40, 40, 0.98);
     }
     .nav-logo-box {
-        height: 52px;
+        height: 48px;
     }
     .nav-logo {
-        height: 38px;
-        max-width: 100px;
+        height: 40px;
+        max-width: 90px;
     }
     .nav-center-box {
         width: 100%;
@@ -99,69 +113,26 @@
         justify-content: center;
     }
     .hamburger {
+        display: flex;
         position: absolute;
         top: 50%;
         right: 12px;
         transform: translateY(-50%);
         z-index: 1100;
-        width: 36px;
-        height: 36px;
-    }
-    .hamburger span {
-        height: 4px;
-        width: 100%;
-        background: white;
-        margin: 6px 0;
-        border-radius: 2px;
-        transition: 0.4s;
-    }
-}
-@media (max-width: 768px) {
-    .nav-bar-flex {
-        flex-direction: row;
-        align-items: center;
-        padding: 0 2vw;
-        min-height: 44px;
-    }
-    .nav-logo-box {
+        width: 44px;
         height: 44px;
     }
-    .nav-logo {
-        height: 28px;
-        max-width: 70px;
-    }
-    .nav-center-box {
+    .hamburger span {
+        height: 5px;
         width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-    .hamburger {
-        position: absolute;
-        top: 50%;
-        right: 12px;
-        transform: translateY(-50%);
-        z-index: 1100;
+        background: white;
+        margin: 7px 0;
+        border-radius: 2.5px;
+        transition: 0.3s;
     }
 }
-/* Flexbox for nav bar layout */
-.nav-bar-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 10px;
-}
-.nav-logo-box {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    height: 60px;
-}
-.nav-logo {
-    height: 48px;
-    width: auto;
-    display: block;
-}
+/* Remove duplicate/overlapping nav-bar-flex and logo rules for clarity */
+/* (Removed duplicate nav-bar-flex and nav-logo rules) */
 .nav-content-box {
     flex: 1 1 auto;
     display: flex;
