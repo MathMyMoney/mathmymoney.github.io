@@ -38,8 +38,8 @@
   justify-content: center;
   position: relative;
 }
-/* Remove old nav-list styles, add main-hamburger-list for new menu */
-.main-hamburger-list {
+/* Navigation list (horizontal by default) */
+.nav-list {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -54,7 +54,7 @@
   box-shadow: none;
   z-index: 101;
 }
-.main-hamburger-list li {
+.nav-list li {
   list-style: none;
 }
 .nav-item {
@@ -142,7 +142,7 @@
     height: 76px;
     max-width: 140px;
   }
-  .main-hamburger-list {
+  .nav-list {
     position: fixed;
     top: 0;
     left: 0;
@@ -157,14 +157,13 @@
     box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     width: 100vw;
     z-index: 300;
-    display: flex;
   }
-  .main-hamburger-list.open {
+  .nav-list.open {
     max-height: 80vh;
     overflow-y: auto;
     padding-bottom: 12px;
   }
-  .main-hamburger-list li {
+  .nav-list li {
     width: 100%;
     text-align: center;
     margin: 0;
@@ -183,7 +182,7 @@
   .hamburger {
     display: flex;
   }
-  .main-hamburger-list:not(.open) {
+  .nav-list:not(.open) {
     pointer-events: none;
   }
 }
@@ -196,7 +195,7 @@
     height: 40px;
     max-width: 90px;
   }
-  .main-hamburger-list {
+  .nav-list {
     margin-top: 72px;
   }
 }
@@ -217,7 +216,7 @@
     height: 4px;
     margin: 4px 0;
   }
-  .main-hamburger-list {
+  .nav-list {
     margin-top: 56px;
   }
 }
@@ -226,7 +225,7 @@
   .hamburger {
     display: none !important;
   }
-  .main-hamburger-list {
+  .nav-list {
     display: flex !important;
     flex-direction: row !important;
     position: static !important;
@@ -238,7 +237,7 @@
     margin-top: 0 !important;
     padding-bottom: 0 !important;
   }
-  .main-hamburger-list li {
+  .nav-list li {
     width: auto !important;
     padding: 0 18px !important;
     border-bottom: none !important;
