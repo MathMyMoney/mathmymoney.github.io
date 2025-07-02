@@ -445,11 +445,10 @@
                 }
             });
             // Always scroll to top after navigation (force, after rendering)
+            // Scroll to top after navigation, after hash update and rendering
             setTimeout(() => {
-                window.scrollTo(0, 0);
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }, 0);
+                window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+            }, 50);
         }
         // Hash navigation support
         window.addEventListener('DOMContentLoaded', () => {
