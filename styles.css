@@ -12,10 +12,24 @@
     align-items: center;
     height: 60px;
 }
+/* Logo sizing for desktop */
 .nav-logo {
     height: 48px;
     width: auto;
+    max-width: 120px;
     display: block;
+}
+@media (max-width: 900px) {
+    .nav-logo {
+        height: 36px;
+        max-width: 90px;
+    }
+}
+@media (max-width: 600px) {
+    .nav-logo {
+        height: 28px;
+        max-width: 70px;
+    }
 }
 .nav-center-box {
     flex: 1 1 0;
