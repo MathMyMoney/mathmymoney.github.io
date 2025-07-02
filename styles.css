@@ -19,42 +19,85 @@
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 100%;
 }
 /* Logo sizing for desktop */
 .nav-logo {
-    height: 64px;
+    height: 88px;
     width: auto;
-    max-width: 160px;
+    max-width: 180px;
     display: block;
     transition: height 0.2s, max-width 0.2s;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    z-index: 1100;
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.hamburger span {
+    height: 5px;
+    width: 100%;
+    background: #fff;
+    margin: 7px 0;
+    border-radius: 2.5px;
+    transition: 0.3s;
 }
 @media (max-width: 900px) {
     .nav-bar-flex {
         min-height: 80px;
         padding: 0 12px;
     }
-    .nav-logo-box {
-        height: 60px;
+    .nav-logo {
+        height: 76px;
+        max-width: 140px;
+    }
+}
+@media (max-width: 768px) {
+    .nav-bar-flex {
+        min-height: 72px;
+        padding: 0 6px;
     }
     .nav-logo {
-        height: 48px;
-        max-width: 120px;
+        height: 60px;
+        max-width: 110px;
+    }
+    .hamburger {
+        display: flex;
+        width: 44px;
+        height: 44px;
     }
 }
 @media (max-width: 600px) {
     .nav-bar-flex {
-        min-height: 64px;
-        padding: 0 4px;
-    }
-    .nav-logo-box {
-        height: 44px;
+        min-height: 56px;
+        padding: 0 2px;
     }
     .nav-logo {
+        height: 40px;
+        max-width: 70px;
+    }
+    .hamburger {
+        width: 36px;
         height: 36px;
-        max-width: 80px;
+    }
+    .hamburger span {
+        height: 4px;
+        margin: 4px 0;
     }
 }
+/* --- END NAV BAR, LOGO, HAMBURGER CONSOLIDATION --- */
+
+/* Remove all previous .nav-logo, .nav-logo-box, .hamburger, and .nav-bar-flex rules above this block for clarity */
 .nav-center-box {
     flex: 1 1 0;
     display: flex;
@@ -570,21 +613,24 @@ header {
             display: none;
             flex-direction: column;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            align-items: center;
             cursor: pointer;
+            width: 44px;
+            height: 44px;
+            z-index: 1100;
             position: absolute;
-            top: 18px;
-            right: 24px;
-            z-index: 1001;
+            right: 12px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
         }
         .hamburger span {
-            height: 4px;
+            height: 5px;
             width: 100%;
-            background: white;
-            margin: 5px 0;
-            border-radius: 2px;
-            transition: 0.4s;
+            background: #fff;
+            margin: 7px 0;
+            border-radius: 2.5px;
+            transition: 0.3s;
         }
 @media (max-width: 768px) {
     nav {
