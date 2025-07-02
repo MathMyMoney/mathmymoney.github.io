@@ -8,28 +8,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="background: #232323; min-height: 100vh;">
         <nav>
         <nav class="nav-bar-flex">
             <div class="nav-logo-box">
                 <img src="images/MMM_Logo.png" alt="Math My Money Logo" class="nav-logo">
             </div>
             <div class="nav-center-box">
-                <div class="hamburger" id="main-hamburger-menu">
+                <div class="hamburger" id="hamburger-menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <ul class="main-hamburger-list" id="main-hamburger-list">
-                    <li class="nav-item" onclick="showPage('home'); closeMainHamburger();">Home</li>
-                    <li class="nav-item" onclick="showPage('about'); closeMainHamburger();">About</li>
-                    <li class="nav-item" onclick="showPage('blog'); closeMainHamburger();">Blog</li>
-                    <li class="nav-item" onclick="showPage('coaching'); closeMainHamburger();">Personal Finance Coaching</li>
-                    <li class="nav-item" onclick="showPage('consulting'); closeMainHamburger();">Business Consulting</li>
-                    <li class="nav-item" onclick="showPage('contact'); closeMainHamburger();">Contact</li>
+                <ul class="nav-list">
+                    <li class="nav-item active" onclick="showPage('home')">Home</li>
+                    <li class="nav-item" onclick="showPage('about')">About</li>
+                    <li class="nav-item" onclick="showPage('blog')">Blog</li>
+                    <li class="nav-item dropdown">
+                        <span class="dropdown-toggle">Services</span>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item" onclick="showPage('coaching')">Personal Finance Coaching</li>
+                            <li class="dropdown-item" onclick="showPage('consulting')">Business Consulting</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" onclick="showPage('contact')">Contact</li>
                     <li class="nav-item" style="background-color: blue;"><a href="personal-finance-game/index.html" style="color: white;">Personal Finance Game</a></li>
-                </ul>
-
                 </ul>
             </div>
             <div class="nav-social-box">
@@ -252,26 +255,24 @@
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => item.classList.remove('active'));
             // Show selected page
-            document.getElementById(pageId).classList.add('active');
+            const page = document.getElementById(pageId);
+            if (page) page.classList.add('active');
             // Add active class to clicked nav item (desktop nav only)
             if (event && event.target && event.target.classList.contains('nav-item')) {
                 event.target.classList.add('active');
             }
         }
 
-        // Hamburger menu for all navigation (single menu)
-        const mainHamburger = document.getElementById('main-hamburger-menu');
-        const mainHamburgerList = document.getElementById('main-hamburger-list');
-        function closeMainHamburger() {
-            mainHamburgerList.classList.remove('open');
-        }
-        mainHamburger.addEventListener('click', () => {
-            mainHamburgerList.classList.toggle('open');
+        // Hamburger menu for nav
+        const hamburger = document.getElementById('hamburger-menu');
+        const navList = document.querySelector('.nav-list');
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('open');
         });
         // Optional: close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!mainHamburger.contains(e.target) && !mainHamburgerList.contains(e.target)) {
-                mainHamburgerList.classList.remove('open');
+            if (!hamburger.contains(e.target) && !navList.contains(e.target)) {
+                navList.classList.remove('open');
             }
         });
     </script>
