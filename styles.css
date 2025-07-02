@@ -44,6 +44,9 @@
         min-width: 0;
         box-shadow: none;
         border-radius: 0 0 12px 12px;
+        max-height: 300px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
  * {
@@ -425,84 +428,87 @@
             border-radius: 2px;
             transition: 0.4s;
         }
-        @media (max-width: 768px) {
-            nav {
-                position: relative;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .nav-list {
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 10px;
-                background: rgba(30,30,30,0.98);
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                border-radius: 0 0 15px 15px;
-                box-shadow: 0 8px 32px rgba(255,255,255,0.1);
-                z-index: 1000;
-            }
-            .nav-list.open {
-                display: flex;
-            }
-            .nav-item {
-                font-size: 1.1rem;
-                padding: 16px 0;
-                border-radius: 0;
-                border-bottom: 1px solid rgba(255,255,255,0.08);
-            }
-            .nav-item:last-child {
-                border-bottom: none;
-            }
-            .social-links {
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-            .service-card, .testimonial, .blog-post {
-                padding: 14px;
-                border-radius: 10px;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-            .intro-text {
-                font-size: 1rem;
-                margin-bottom: 24px;
-            }
-            .contact-info {
-                font-size: 1rem;
-            }
-            .contact-email {
-                padding: 10px 12px;
-                font-size: 1rem;
-            }
-            .pizza-snowman {
-                font-size: 1.2rem;
-            }
-            .testimonial-text {
-                font-size: 1rem;
-            }
-            .testimonial-author {
-                font-size: 0.95rem;
-            }
-            .service-card h2 {
-                font-size: 1.2rem;
-            }
-            .service-card p {
-                font-size: 1rem;
-            }
-            .blog-post h3 {
-                font-size: 1.1rem;
-            }
-            .blog-meta {
-                font-size: 0.85rem;
-            }
-        }
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        background: rgba(30,30,30,0.98);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 8px 32px rgba(255,255,255,0.1);
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .nav-list.open {
+        display: flex;
+    }
+    .nav-item {
+        font-size: 1.1rem;
+        padding: 16px 0;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    .social-links {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .service-card, .testimonial, .blog-post {
+        padding: 14px;
+        border-radius: 10px;
+    }
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .intro-text {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+    .contact-info {
+        font-size: 1rem;
+    }
+    .contact-email {
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+    .pizza-snowman {
+        font-size: 1.2rem;
+    }
+    .testimonial-text {
+        font-size: 1rem;
+    }
+    .testimonial-author {
+        font-size: 0.95rem;
+    }
+    .service-card h2 {
+        font-size: 1.2rem;
+    }
+    .service-card p {
+        font-size: 1rem;
+    }
+    .blog-post h3 {
+        font-size: 1.1rem;
+    }
+    .blog-meta {
+        font-size: 0.85rem;
+    }
+}
 
         @media (max-width: 480px) {
             .container {
