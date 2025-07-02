@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container" style="background: #232323; min-height: 100vh;">
+    <div class="container">
         <nav>
         <nav class="nav-bar-flex">
             <div class="nav-logo-box">
@@ -32,7 +32,7 @@
                         </ul>
                     </li>
                     <li class="nav-item" onclick="showPage('contact')">Contact</li>
-                    <li class="nav-item" style="background-color: blue;"><a href="personal-finance-game/index.html" style="color: white;">Personal Finance Game</a></li>
+                    <li class="nav-item" style="background-color: blue;"><a href="/personal-finance-game/" style="color: white;">Personal Finance Game</a></li>
                 </ul>
             </div>
             <div class="nav-social-box">
@@ -251,30 +251,24 @@
             // Hide all pages
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
+            
             // Remove active class from nav items
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => item.classList.remove('active'));
+            
             // Show selected page
-            const page = document.getElementById(pageId);
-            if (page) page.classList.add('active');
-            // Add active class to clicked nav item (desktop nav only)
-            if (event && event.target && event.target.classList.contains('nav-item')) {
-                event.target.classList.add('active');
-            }
+            document.getElementById(pageId).classList.add('active');
+            
+            // Add active class to clicked nav item
+            event.target.classList.add('active');
         }
-
-        // Hamburger menu for nav
-        const hamburger = document.getElementById('hamburger-menu');
-        const navList = document.querySelector('.nav-list');
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('open');
-        });
-        // Optional: close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!hamburger.contains(e.target) && !navList.contains(e.target)) {
-                navList.classList.remove('open');
-            }
-        });
     </script>
+<script>
+  const hamburger = document.getElementById('hamburger-menu');
+  const navList = document.querySelector('.nav-list');
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('open');
+  });
+</script>
 </body>
 </html>
