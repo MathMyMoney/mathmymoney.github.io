@@ -1,63 +1,182 @@
-/* Improved nav bar layout: left logo, center links, right social */
-/* Nav bar background and sizing for all screens */
-.nav-bar-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 24px;
-    background: rgba(40, 40, 40, 0.98);
-    backdrop-filter: blur(10px);
-    border-radius: 18px;
-    margin-bottom: 8px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    position: relative;
-    min-height: 96px;
-    transition: min-height 0.2s, padding 0.2s;
+/* Math My Money Modern Black Theme */
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.nav-logo-box {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    height: 100%;
+
+.mmm-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  padding: 0 32px;
+  height: 72px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
 }
-/* Logo sizing for desktop */
-.nav-logo {
-    height: 88px;
-    width: auto;
-    max-width: 180px;
-    display: block;
-    transition: height 0.2s, max-width 0.2s;
+.mmm-nav-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
 }
-.hamburger {
-    display: none;
+.mmm-nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mmm-nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.mmm-nav-links li a:hover, .mmm-nav-links li a:focus {
+  background: #222;
+  color: #ffd700;
+}
+.mmm-nav-social {
+  display: flex;
+  gap: 16px;
+}
+.mmm-nav-social a {
+  color: #ffd700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.mmm-nav-social a:hover {
+  color: #fff;
+}
+
+.mmm-main {
+  max-width: 800px;
+  margin: 48px auto 0 auto;
+  padding: 0 16px 48px 16px;
+}
+.mmm-hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.mmm-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #ffd700;
+}
+.mmm-hero h2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: #fff;
+}
+.mmm-hero p {
+  font-size: 1.15rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.mmm-testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.mmm-testimonials blockquote {
+  background: #181818;
+  border-left: 4px solid #ffd700;
+  margin: 0;
+  padding: 18px 24px;
+  font-size: 1.1rem;
+  color: #fff;
+  border-radius: 8px;
+}
+.mmm-testimonials blockquote span {
+  color: #ffd700;
+  font-size: 1rem;
+  margin-left: 8px;
+}
+
+.mmm-newsletter {
+  background: #181818;
+  border-radius: 10px;
+  padding: 32px 24px 24px 24px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.mmm-newsletter h3 {
+  color: #ffd700;
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+}
+.mmm-newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.mmm-newsletter-form input[type="email"] {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+.mmm-newsletter-form button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  background: #ffd700;
+  color: #111;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mmm-newsletter-form button:hover {
+  background: #fff;
+  color: #111;
+}
+.mmm-newsletter small {
+  color: #aaa;
+}
+
+.mmm-footer {
+  text-align: center;
+  color: #aaa;
+  font-size: 1rem;
+  padding: 32px 0 18px 0;
+  background: #111;
+  margin-top: 48px;
+}
+
+@media (max-width: 700px) {
+  .mmm-main {
+    max-width: 98vw;
+    padding: 0 4vw 48px 4vw;
+  }
+  .mmm-nav {
     flex-direction: column;
+    height: auto;
+    padding: 12px 0;
+    gap: 10px;
+  }
+  .mmm-nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    z-index: 1100;
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
+  }
+  .mmm-nav-social {
+    gap: 10px;
+  }
 }
-.hamburger span {
-    height: 5px;
-    width: 100%;
-    background: #fff;
-    margin: 7px 0;
-    border-radius: 2.5px;
-    transition: 0.3s;
-}
-@media (max-width: 900px) {
-    .nav-bar-flex {
-        position: relative;
-        z-index: 2000;
-        min-height: 80px;
-        padding: 0 12px;
     }
     .nav-logo {
         height: 76px;
