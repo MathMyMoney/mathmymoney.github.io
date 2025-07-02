@@ -51,11 +51,10 @@
         max-width: 140px;
     }
     .nav-list {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
-        margin-top: 96px; /* height of nav-bar-flex */
         background: rgba(40, 40, 40, 0.98);
         flex-direction: column;
         align-items: center;
@@ -64,14 +63,14 @@
         transition: max-height 0.3s;
         box-shadow: 0 4px 16px rgba(0,0,0,0.12);
         width: 100vw;
-        z-index: 2000;
+        z-index: 2100;
         padding: 0;
     }
     .nav-list.open {
         max-height: 80vh;
         overflow-y: auto;
         padding-bottom: 12px;
-        z-index: 2001;
+        z-index: 2101;
     }
     .hamburger {
         display: flex;
@@ -102,12 +101,16 @@
         justify-content: center;
     }
     .nav-list {
-        margin-top: 72px;
+        width: 100vw;
     }
     .hamburger {
         display: flex;
         width: 44px;
         height: 44px;
+        top: 50%;
+        transform: translateY(-50%);
+        align-items: center;
+        justify-content: center;
     }
 }
 @media (max-width: 600px) {
@@ -120,11 +123,15 @@
         max-width: 70px;
     }
     .nav-list {
-        margin-top: 56px;
+        width: 100vw;
     }
     .hamburger {
         width: 36px;
         height: 36px;
+        top: 50%;
+        transform: translateY(-50%);
+        align-items: center;
+        justify-content: center;
     }
 }
 /* --- END NAV BAR, LOGO, HAMBURGER CONSOLIDATION --- */
@@ -150,11 +157,10 @@
 }
 @media (max-width: 900px) {
     .nav-list {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
-        margin-top: 96px; /* height of nav-bar-flex */
         background: rgba(40, 40, 40, 0.98);
         flex-direction: column;
         align-items: center;
@@ -163,14 +169,14 @@
         transition: max-height 0.3s;
         box-shadow: 0 4px 16px rgba(0,0,0,0.12);
         width: 100vw;
-        z-index: 2000;
+        z-index: 2100;
         padding: 0;
     }
     .nav-list.open {
         max-height: 80vh;
         overflow-y: auto;
         padding-bottom: 12px;
-        z-index: 2001;
+        z-index: 2101;
     }
     .nav-item {
         width: 100%;
@@ -277,11 +283,10 @@
 }
 @media (max-width: 900px) {
     .nav-list {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
-        margin-top: 96px; /* height of nav-bar-flex */
         background: rgba(40, 40, 40, 0.98);
         flex-direction: column;
         align-items: center;
@@ -312,20 +317,10 @@
 @media (max-width: 768px) {
     .nav-list {
         width: 100vw;
-        margin-top: 72px;
-    }
-    .hamburger {
-        width: 44px;
-        height: 44px;
     }
 }
 @media (max-width: 600px) {
     .nav-list {
         width: 100vw;
-        margin-top: 56px;
-    }
-    .hamburger {
-        width: 36px;
-        height: 36px;
     }
 }
