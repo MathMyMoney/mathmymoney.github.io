@@ -76,6 +76,27 @@
         width: 44px;
         height: 44px;
     }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(40, 40, 40, 0.98);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        z-index: 1001;
+    }
+    .nav-list.open {
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-bottom: 12px;
+    }
 }
 @media (max-width: 600px) {
     .nav-bar-flex {
@@ -93,6 +114,27 @@
     .hamburger span {
         height: 4px;
         margin: 4px 0;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(40, 40, 40, 0.98);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        z-index: 1001;
+    }
+    .nav-list.open {
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-bottom: 12px;
     }
 }
 /* --- END NAV BAR, LOGO, HAMBURGER CONSOLIDATION --- */
@@ -117,24 +159,40 @@
     height: 60px;
 }
 @media (max-width: 900px) {
-    .nav-bar-flex {
-        flex-direction: row;
+    .nav-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(40, 40, 40, 0.98);
+        flex-direction: column;
         align-items: center;
-        padding: 0 8px;
-        min-height: 60px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        width: 100vw;
+        z-index: 1001;
     }
-    .nav-logo-box {
-        height: 56px;
+    .nav-list.open {
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-bottom: 12px;
     }
-    .nav-logo {
-        height: 44px;
-        max-width: 120px;
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 22px 0;
+        border-bottom: 1px solid #444;
     }
-    .nav-center-box {
-        gap: 0;
-    }
-    .nav-social-box {
-        height: 56px;
+    .dropdown-menu {
+        position: static;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
     }
 }
 @media (max-width: 768px) {
@@ -172,6 +230,27 @@
         margin: 7px 0;
         border-radius: 2.5px;
         transition: 0.3s;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(40, 40, 40, 0.98);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        z-index: 1001;
+    }
+    .nav-list.open {
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-bottom: 12px;
     }
 }
 /* Remove duplicate/overlapping nav-bar-flex and logo rules for clarity */
@@ -640,24 +719,25 @@ header {
         display: flex;
     }
     .nav-list {
-        display: none;
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        background: rgba(30,30,30,0.98);
+        align-items: center;
+        width: 100vw;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
-        width: 100%;
-        border-radius: 0 0 15px 15px;
-        box-shadow: 0 8px 32px rgba(255,255,255,0.1);
-        z-index: 1000;
-        max-height: 80vh;
-        overflow-y: scroll !important;
-        -webkit-overflow-scrolling: touch;
+        right: 0;
+        background: rgba(40, 40, 40, 0.98);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        z-index: 1001;
     }
     .nav-list.open {
-        display: flex;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-bottom: 12px;
     }
     .nav-item {
         font-size: 1.1rem;
