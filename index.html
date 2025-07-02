@@ -19,9 +19,13 @@
                 <li class="nav-item active" onclick="showPage('home')">Home</li>
                 <li class="nav-item" onclick="showPage('about')">About</li>
                 <li class="nav-item" onclick="showPage('blog')">Blog</li>
-                <li class="nav-item" onclick="showPage('services')">Services</li>
-                <li class="nav-item" onclick="showPage('coaching')">Coaching</li>
-                <li class="nav-item" onclick="showPage('consulting')">Consulting</li>
+                <li class="nav-item dropdown">
+                    <span class="dropdown-toggle">Services</span>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item" onclick="showPage('coaching')">Personal Finance Coaching</li>
+                        <li class="dropdown-item" onclick="showPage('consulting')">Business Consulting</li>
+                    </ul>
+                </li>
                 <li class="nav-item" onclick="showPage('contact')">Contact</li>
                 <li class="nav-item" style="background-color: blue;"><a href="/personal-finance-game/" style="color: white;">Personal Finance Game</a></li>
             </ul>
@@ -39,32 +43,30 @@
         </nav>
         
         <header>
-            <h1 class="site-title">Math My Money</h1>
-            <img src="images/MMM_Flag.png" alt="Math My Money Flag" style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);">
-            <!-- <p class="subtitle">Personal Finance Done Better</p> -->
-            <!-- <p class="subtitle">Come for the money, stay for the pizza and snowmen</p> -->
+            <!-- Home page header content will be inserted in the home page below -->
         </header>
         
         <!-- HOME PAGE -->
         <div id="home" class="page active">
+            <header>
+                <h1 class="site-title">Math My Money</h1>
+                <img src="images/MMM_Flag.png" alt="Math My Money Flag" style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);">
+            </header>
             <p class="intro-text">
                 Here at Math My Money, the goal is to provide everyone with the knowledge they need to succeed. 
                 Most of us get thrown into "The Real World" without any formal education on how to make, save, 
                 spend, invest, or think about money. Here you will find explanations and examples on a variety 
                 of topics without the nonsense get rich schemes or BS.
             </p>
-            
             <div class="testimonials">
                 <div class="testimonial">
                     <p class="testimonial-text">"I don't know how I got here but I'm glad I did!"</p>
                     <p class="testimonial-author">-Lily G.</p>
                 </div>
-                
                 <div class="testimonial">
                     <p class="testimonial-text">"Finally a site that explores the most powerful force in the universe, compound interest."</p>
                     <p class="testimonial-author">-Albert Einstein</p>
                 </div>
-                
                 <div class="testimonial">
                     <p class="testimonial-text">"If only I came across Math My Money sooner, I could have really made something of my investments!"</p>
                     <p class="testimonial-author">-Warren Buffet</p>
