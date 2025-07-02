@@ -444,8 +444,12 @@
                     item.classList.add('active');
                 }
             });
-            // Always scroll to top after navigation
-            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+            // Always scroll to top after navigation (force, after rendering)
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }, 0);
         }
         // Hash navigation support
         window.addEventListener('DOMContentLoaded', () => {
