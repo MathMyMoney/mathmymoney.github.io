@@ -41,6 +41,8 @@
 }
 @media (max-width: 900px) {
     .nav-bar-flex {
+        position: relative;
+        z-index: 2000;
         min-height: 80px;
         padding: 0 12px;
     }
@@ -48,23 +50,27 @@
         height: 76px;
         max-width: 140px;
     }
-<<<<<<< HEAD
     .nav-list {
-        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(40, 40, 40, 0.98);
         flex-direction: column;
         align-items: center;
-        background: rgba(40, 40, 40, 0.98);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s;
         box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-        width: 100%;
+        width: 100vw;
+        z-index: 2100;
         padding: 0;
     }
     .nav-list.open {
         max-height: 80vh;
         overflow-y: auto;
         padding-bottom: 12px;
+        z-index: 2101;
     }
     .hamburger {
         display: flex;
@@ -75,36 +81,29 @@
         align-items: center;
         justify-content: center;
     }
-=======
->>>>>>> parent of a153b3c (Update styles.css)
 }
 @media (max-width: 768px) {
     .nav-bar-flex {
         min-height: 72px;
         padding: 0 6px;
+        background: rgba(40, 40, 40, 0.98);
+    }
+    .nav-logo-box {
+        height: 48px;
     }
     .nav-logo {
-        height: 60px;
-        max-width: 110px;
+        height: 40px;
+        max-width: 90px;
     }
-    .nav-list {
+    .nav-center-box {
         width: 100%;
+        align-items: center;
+        justify-content: center;
     }
     .hamburger {
         display: flex;
         width: 44px;
         height: 44px;
-<<<<<<< HEAD
-        top: 50%;
-        transform: translateY(-50%);
-=======
-    }
-    .nav-list {
-        display: flex;
-        flex-direction: column;
->>>>>>> parent of a153b3c (Update styles.css)
-        align-items: center;
-        justify-content: center;
     }
 }
 @media (max-width: 600px) {
@@ -116,16 +115,9 @@
         height: 40px;
         max-width: 70px;
     }
-    .nav-list {
-        width: 100%;
-    }
     .hamburger {
         width: 36px;
         height: 36px;
-        top: 50%;
-        transform: translateY(-50%);
-        align-items: center;
-        justify-content: center;
     }
 }
 /* --- END NAV BAR, LOGO, HAMBURGER CONSOLIDATION --- */
@@ -151,21 +143,26 @@
 }
 @media (max-width: 900px) {
     .nav-list {
-        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: 96px; /* height of nav-bar-flex */
+        background: rgba(40, 40, 40, 0.98);
         flex-direction: column;
         align-items: center;
-        background: rgba(40, 40, 40, 0.98);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s;
         box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-        width: 100%;
-        padding: 0;
+        width: 100vw;
+        z-index: 2000;
     }
     .nav-list.open {
         max-height: 80vh;
         overflow-y: auto;
         padding-bottom: 12px;
+        z-index: 2001;
     }
     .nav-item {
         width: 100%;
@@ -201,9 +198,6 @@
         align-items: center;
         justify-content: center;
     }
-    .nav-list {
-        width: 100%;
-    }
     .hamburger {
         display: flex;
         width: 44px;
@@ -222,9 +216,6 @@
     .nav-logo {
         height: 40px;
         max-width: 70px;
-    }
-    .nav-list {
-        width: 100%;
     }
     .hamburger {
         width: 36px;
@@ -278,21 +269,26 @@
 }
 @media (max-width: 900px) {
     .nav-list {
-        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(40, 40, 40, 0.98);
         flex-direction: column;
         align-items: center;
-        background: rgba(40, 40, 40, 0.98);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s;
         box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-        width: 100%;
+        width: 100vw;
+        z-index: 2100;
         padding: 0;
     }
     .nav-list.open {
         max-height: 80vh;
         overflow-y: auto;
         padding-bottom: 12px;
+        z-index: 2101;
     }
     .hamburger {
         display: flex;
@@ -306,11 +302,19 @@
 }
 @media (max-width: 768px) {
     .nav-list {
-        width: 100%;
+        width: 100vw;
+    }
+    .hamburger {
+        width: 44px;
+        height: 44px;
     }
 }
 @media (max-width: 600px) {
     .nav-list {
-        width: 100%;
+        width: 100vw;
+    }
+    .hamburger {
+        width: 36px;
+        height: 36px;
     }
 }
