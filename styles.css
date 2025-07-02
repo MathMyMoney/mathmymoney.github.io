@@ -1,17 +1,18 @@
 /* Improved nav bar layout: left logo, center links, right social */
+/* Nav bar background and sizing for all screens */
 .nav-bar-flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 10px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 0 18px;
+    background: rgba(30, 30, 30, 0.98);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     margin-bottom: 8px;
     box-shadow: 0 8px 32px rgba(255,255,255,0.1);
     position: relative;
-    min-height: 60px;
+    min-height: 72px;
 }
 .nav-logo-box {
     flex: 0 0 auto;
@@ -60,20 +61,59 @@
     .nav-bar-flex {
         flex-direction: row;
         align-items: center;
-        padding: 0 4px;
-        min-height: 48px;
+        padding: 0 8px;
+        min-height: 60px;
     }
     .nav-logo-box {
-        height: 48px;
+        height: 56px;
     }
     .nav-logo {
-        height: 36px;
+        height: 44px;
+        max-width: 120px;
     }
     .nav-center-box {
         gap: 0;
     }
     .nav-social-box {
-        height: 48px;
+        height: 56px;
+    }
+}
+@media (max-width: 768px) {
+    .nav-bar-flex {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 2vw;
+        min-height: 64px;
+        background: rgba(30, 30, 30, 0.98);
+    }
+    .nav-logo-box {
+        height: 52px;
+    }
+    .nav-logo {
+        height: 38px;
+        max-width: 100px;
+    }
+    .nav-center-box {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .hamburger {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        z-index: 1100;
+        width: 36px;
+        height: 36px;
+    }
+    .hamburger span {
+        height: 4px;
+        width: 100%;
+        background: white;
+        margin: 6px 0;
+        border-radius: 2px;
+        transition: 0.4s;
     }
 }
 @media (max-width: 768px) {
