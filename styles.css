@@ -160,10 +160,11 @@
 }
 @media (max-width: 900px) {
     .nav-list {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
+        margin-top: 96px; /* height of nav-bar-flex */
         background: rgba(40, 40, 40, 0.98);
         flex-direction: column;
         align-items: center;
@@ -172,12 +173,13 @@
         transition: max-height 0.3s;
         box-shadow: 0 4px 16px rgba(0,0,0,0.12);
         width: 100vw;
-        z-index: 1001;
+        z-index: 2000;
     }
     .nav-list.open {
         max-height: 80vh;
         overflow-y: auto;
         padding-bottom: 12px;
+        z-index: 2001;
     }
     .nav-item {
         width: 100%;
