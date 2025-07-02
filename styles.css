@@ -1,3 +1,45 @@
+/* Flexbox for nav bar layout */
+.nav-bar-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+.nav-logo-box {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.nav-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+.nav-content-box {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+@media (max-width: 768px) {
+    .nav-bar-flex {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 4px;
+    }
+    .nav-logo-box {
+        height: 48px;
+    }
+    .nav-logo {
+        height: 36px;
+    }
+    .nav-content-box {
+        gap: 8px;
+    }
+}
 /* Dropdown menu styles */
 .dropdown {
     position: relative;
