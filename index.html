@@ -32,13 +32,26 @@
                         </ul>
                     </li>
                     <li class="nav-item" onclick="showPage('contact')">Contact</li>
-                    <li class="nav-item" style="background-color: blue;"><a href="#" onclick="showPage('personal-finance-game')" style="color: white;">Personal Finance Game</a></li>
-        <!-- PERSONAL FINANCE GAME PAGE -->
-        <div id="personal-finance-game" class="page">
-            <h1>Personal Finance Game</h1>
-            <img src="personal-finance-game/images/PF_Game_Under_Construction.png" alt="Personal Finance Game Under Construction" style="max-width: 100%; height: auto; margin: 24px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);">
-            <p style="text-align:center; color:#ccc; font-size:1.1rem;">This page is under construction. Stay tuned for updates!</p>
-        </div>
+                    <li class="nav-item" style="background-color: blue;"><a href="personal-finance-game/index.html" style="color: white;">Personal Finance Game</a></li>
+                </ul>
+                <!-- Mobile Hamburger Menu for SPA Pages -->
+                <div class="mobile-hamburger-pages" id="mobile-hamburger-pages">
+                  <div class="mobile-hamburger-icon" id="mobile-pages-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <ul class="mobile-pages-list" id="mobile-pages-list">
+                    <li class="nav-item" onclick="showPage('home'); toggleMobilePagesMenu();">Home</li>
+                    <li class="nav-item" onclick="showPage('about'); toggleMobilePagesMenu();">About</li>
+                    <li class="nav-item" onclick="showPage('blog'); toggleMobilePagesMenu();">Blog</li>
+                    <li class="nav-item" onclick="showPage('coaching'); toggleMobilePagesMenu();">Personal Finance Coaching</li>
+                    <li class="nav-item" onclick="showPage('consulting'); toggleMobilePagesMenu();">Business Consulting</li>
+                    <li class="nav-item" onclick="showPage('contact'); toggleMobilePagesMenu();">Contact</li>
+                    <li class="nav-item" style="background-color: blue;"><a href="personal-finance-game/index.html" style="color: white;">Personal Finance Game</a></li>
+                  </ul>
+                </div>
+
                 </ul>
             </div>
             <div class="nav-social-box">
@@ -257,24 +270,31 @@
             // Hide all pages
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
-            
             // Remove active class from nav items
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => item.classList.remove('active'));
-            
             // Show selected page
             document.getElementById(pageId).classList.add('active');
-            
-            // Add active class to clicked nav item
-            event.target.classList.add('active');
+            // Add active class to clicked nav item (desktop nav only)
+            if (event && event.target && event.target.classList.contains('nav-item')) {
+                event.target.classList.add('active');
+            }
         }
+
+        // Hamburger menu for main nav
+        const hamburger = document.getElementById('hamburger-menu');
+        const navList = document.querySelector('.nav-list');
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('open');
+        });
+
+        // Hamburger menu for SPA pages (mobile)
+        const mobilePagesHamburger = document.getElementById('mobile-pages-hamburger');
+        const mobilePagesList = document.getElementById('mobile-pages-list');
+        function toggleMobilePagesMenu() {
+            mobilePagesList.classList.toggle('open');
+        }
+        mobilePagesHamburger.addEventListener('click', toggleMobilePagesMenu);
     </script>
-<script>
-  const hamburger = document.getElementById('hamburger-menu');
-  const navList = document.querySelector('.nav-list');
-  hamburger.addEventListener('click', () => {
-    navList.classList.toggle('open');
-  });
-</script>
 </body>
 </html>
