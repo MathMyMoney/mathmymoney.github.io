@@ -6,13 +6,209 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math My Money</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* TEMP: Ensure logo is not oversized */
+        .nav-logo {
+            max-height: 48px;
+            width: auto;
+        }
+        .nav-bar-flex {
+            background: #111;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            height: 64px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .nav-logo-box {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .nav-center-box {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-list {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-item {
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .nav-item.active, .nav-item:hover {
+            background: #222;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-toggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #222;
+            min-width: 200px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            border-radius: 0 0 8px 8px;
+            z-index: 10;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-item {
+            padding: 12px 20px;
+            color: #fff;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .dropdown-item:hover {
+            background: #333;
+        }
+        .nav-social-box {
+            display: none;
+        }
+        @media (max-width: 900px) {
+            .nav-bar-flex {
+                flex-direction: column;
+                height: auto;
+                padding: 0 8px;
+            }
+            .nav-list {
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+                background: #111;
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                z-index: 100;
+            }
+            .nav-list.open {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            margin-right: 16px;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+        .site-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 24px 0 8px 0;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .intro-text {
+            color: #ccc;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 32px auto;
+        }
+        .container {
+            background: #181818;
+            min-height: 100vh;
+            padding-bottom: 0;
+        }
+        .page {
+            display: none;
+            padding: 32px 16px 0 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .page.active {
+            display: block;
+        }
+        .service-card, .blog-post, .contact-info {
+            background: #232323;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            padding: 24px;
+            margin-bottom: 24px;
+            color: #eee;
+        }
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .pricing-item {
+            background: #181818;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 16px 24px;
+            color: #fff;
+            font-weight: 600;
+            min-width: 160px;
+            text-align: center;
+        }
+        .footer-social-links {
+            margin-bottom: 12px;
+        }
+        .footer-social-links img {
+            filter: grayscale(1) brightness(1.2);
+            transition: filter 0.2s;
+        }
+        .footer-social-links img:hover {
+            filter: none;
+        }
+        footer {
+            background: #111;
+            color: #aaa;
+            font-size: 0.95rem;
+            padding: 24px 0 12px 0;
+            text-align: center;
+            margin-top: 48px;
+        }
+        a, .contact-email {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+        a:hover, .contact-email:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <nav>
         <nav class="nav-bar-flex">
             <div class="nav-logo-box">
-                <img src="images/MMM_Logo.png" alt="Math My Money Logo" class="nav-logo">
+                <a href="#home" onclick="showPage('home');return false;">
+                    <img src="images/MMM_Logo.png" alt="Math My Money Logo" class="nav-logo">
+                </a>
             </div>
             <div class="nav-center-box">
                 <div class="hamburger" id="hamburger-menu">
@@ -21,24 +217,23 @@
                     <span></span>
                 </div>
                 <ul class="nav-list">
-                    <li class="nav-item active" onclick="showPage('home')">Home</li>
-                    <li class="nav-item" onclick="showPage('about')">About</li>
-                    <li class="nav-item" onclick="showPage('blog')">Blog</li>
+                    <li class="nav-item active" onclick="showPage('home')"><a href="#home">Home</a></li>
+                    <li class="nav-item" onclick="showPage('about')"><a href="#about">About</a></li>
+                    <li class="nav-item" onclick="showPage('blog')"><a href="#blog">Blog</a></li>
                     <li class="nav-item dropdown">
-                        <span class="dropdown-toggle">Services</span>
+                        <span class="dropdown-toggle">Services ▾</span>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-item" onclick="showPage('coaching')">Personal Finance Coaching</li>
-                            <li class="dropdown-item" onclick="showPage('consulting')">Business Consulting</li>
+                            <li class="dropdown-item" onclick="showPage('coaching')"><a href="#coaching">Personal Finance Coaching</a></li>
+                            <li class="dropdown-item" onclick="showPage('consulting')"><a href="#consulting">Business Consulting</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item" onclick="showPage('contact')">Contact</li>
-                    <li class="nav-item" style="background-color: blue;"><a href="/personal-finance-game/" style="color: white;">Personal Finance Game</a></li>
+                    <li class="nav-item" onclick="showPage('contact')"><a href="#contact">Contact</a></li>
+                    <li class="nav-item" style="background-color: #1976d2;"><a href="/personal-finance-game/" style="color: white;">Personal Finance Game</a></li>
                 </ul>
             </div>
-            <div class="nav-social-box">
-                <!-- Social links moved to footer -->
-            </div>
+            <div class="nav-social-box"></div>
         </nav>
+        <!-- Dropdown hover logic is now handled by CSS -->
         <header>
             <!-- Home page header content will be inserted in the home page below -->
         </header>
@@ -251,24 +446,37 @@
             // Hide all pages
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
-            
             // Remove active class from nav items
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => item.classList.remove('active'));
-            
             // Show selected page
             document.getElementById(pageId).classList.add('active');
-            
             // Add active class to clicked nav item
-            event.target.classList.add('active');
+            // Find the nav-item whose child <a> or itself matches the page
+            navItems.forEach(item => {
+                const a = item.querySelector('a');
+                if ((a && a.getAttribute('href') === '#' + pageId) || (!a && item.textContent.trim().toLowerCase() === pageId)) {
+                    item.classList.add('active');
+                }
+            });
         }
+        // Hash navigation support
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash) {
+                const page = window.location.hash.replace('#', '');
+                if (document.getElementById(page)) showPage(page);
+            }
+        });
+        window.addEventListener('hashchange', () => {
+            const page = window.location.hash.replace('#', '');
+            if (document.getElementById(page)) showPage(page);
+        });
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger-menu');
+        const navList = document.querySelector('.nav-list');
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('open');
+        });
     </script>
-<script>
-  const hamburger = document.getElementById('hamburger-menu');
-  const navList = document.querySelector('.nav-list');
-  hamburger.addEventListener('click', () => {
-    navList.classList.toggle('open');
-  });
-</script>
 </body>
 </html>
