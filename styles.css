@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   min-height: 100vh;
   width: 100vw;
@@ -11,9 +12,19 @@ html, body {
   overflow-x: hidden;
 }
 
-body, .container, .page {
+body,
+.container,
+.page {
   background: #000 !important;
 }
+
+/* --- HEADER STYLES --- */
+header {
+  background: #111;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
 
 /* --- NAVIGATION BAR --- */
 .nav-bar-flex {
@@ -21,30 +32,116 @@ body, .container, .page {
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 16px;
   padding: 0 32px;
   height: 64px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1100;
+  transition: height 0.3s cubic-bezier(.4, 0, .2, 1);
 }
+
+.nav-logo-box:first-child {
+  margin-right: 0;
+}
+
+
+header.shrunk .nav-bar-flex {
+  height: 48px;
+}
+
+
+header.shrunk .nav-logo {
+  max-height: 32px;
+  min-height: 32px;
+  height: 32px;
+}
+
+
+header.shrunk .nav-logo-box a {
+  font-size: 1.1rem;
+  padding: 6px 12px;
+}
+
+
+.nav-logo-box a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s, font-size 0.3s cubic-bezier(.4, 0, .2, 1), padding 0.3s cubic-bezier(.4, 0, .2, 1);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.nav-logo-box a:hover {
+  background: #222;
+  color: #4fc3f7;
+}
+
+
+/* Make header logo match nav bar height */
+header .nav-logo {
+  max-height: 64px;
+  min-height: 64px;
+  height: 64px;
+}
+
+/* --- END HEADER STYLES --- */
+
+/* --- NAVIGATION BAR --- */
+.nav-bar-flex {
+  background: #232323 !important;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 0 32px;
+  height: 64px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
 .nav-logo-box {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
 }
+
+
 .nav-logo {
-  max-height: 48px;
+  max-height: 64px;
+  min-height: 32px;
+  height: 100%;
   width: auto;
   display: block;
+  transition: max-height 0.3s cubic-bezier(.4, 0, .2, 1), min-height 0.3s cubic-bezier(.4, 0, .2, 1), height 0.3s cubic-bezier(.4, 0, .2, 1);
 }
+
 .nav-center-box {
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.nav-links-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 0%;
+  gap: 16px;
+}
+
 .nav-list {
   display: flex;
   gap: 24px;
@@ -52,6 +149,7 @@ body, .container, .page {
   margin: 0;
   padding: 0;
 }
+
 .nav-item {
   cursor: pointer;
   font-size: 1.1rem;
@@ -59,17 +157,22 @@ body, .container, .page {
   border-radius: 4px;
   transition: background 0.2s;
 }
-.nav-item.active, .nav-item:hover {
+
+.nav-item.active,
+.nav-item:hover {
   background: #222;
 }
+
 .dropdown {
   position: relative;
 }
+
 .dropdown-toggle {
   cursor: pointer;
   display: flex;
   align-items: center;
 }
+
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -77,31 +180,37 @@ body, .container, .page {
   left: 0;
   background: #222;
   min-width: 200px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   border-radius: 0 0 8px 8px;
   z-index: 10;
 }
+
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
 .dropdown-item {
   padding: 12px 20px;
   color: #fff;
   cursor: pointer;
   white-space: nowrap;
 }
+
 .dropdown-item:hover {
   background: #333;
 }
+
 .nav-social-box {
   display: none;
 }
+
 @media (max-width: 900px) {
   .nav-bar-flex {
     flex-direction: column;
     height: auto;
     padding: 0 8px;
   }
+
   .nav-list {
     flex-direction: column;
     gap: 0;
@@ -113,13 +222,22 @@ body, .container, .page {
     left: 0;
     z-index: 100;
   }
+
   .nav-list.open {
     display: flex;
   }
+
   .hamburger {
     display: flex;
   }
+
+  .nav-logo {
+    max-height: 48px;
+    min-height: 32px;
+    height: 48px;
+  }
 }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -127,6 +245,7 @@ body, .container, .page {
   gap: 4px;
   margin-right: 16px;
 }
+
 .hamburger span {
   display: block;
   width: 28px;
@@ -152,17 +271,30 @@ body, .container, .page {
 }
 
 .page {
-  flex: 1 0 auto;
-  padding: 0;
-  margin: 0;
-  width: 100vw;
-  max-width: 100vw;
+  width: 66vw;
+  max-width: 66vw;
+  min-width: 320px;
+  margin: 0 auto;
   box-sizing: border-box;
   background: #000;
 }
 
+h1 {
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .page {
+    width: 96vw;
+    max-width: 96vw;
+    margin: 0 2vw;
+  }
+}
+
 /* --- FOOTER STYLES --- */
-footer, .footer, .mmm-footer {
+footer,
+.footer,
+.mmm-footer {
   margin-top: 0 !important;
   padding-top: 24px;
   padding-bottom: 12px;
@@ -174,11 +306,16 @@ footer, .footer, .mmm-footer {
   box-sizing: border-box;
 }
 
-.footer-social-links img, .footer-social-links a img, footer .social-link img {
+.footer-social-links img,
+.footer-social-links a img,
+footer .social-link img {
   filter: none !important;
   transition: filter 0.2s;
 }
-.footer-social-links img:hover, .footer-social-links a:hover img, footer .social-link:hover img {
+
+.footer-social-links img:hover,
+.footer-social-links a:hover img,
+footer .social-link:hover img {
   filter: brightness(1.2) !important;
 }
 
@@ -186,19 +323,21 @@ footer, .footer, .mmm-footer {
 .about-photo-row {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   gap: 24px;
   margin: 24px 0 32px 0;
 }
+
 .about-photo {
   width: 160px;
   height: 160px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   background: #222;
 }
+
 .about-photo-row img:nth-child(1),
 .about-photo-row img:nth-child(2) {
   object-position: top;
@@ -206,12 +345,47 @@ footer, .footer, .mmm-footer {
 
 /* --- END CONTAINER AND PAGE STYLES --- */
 
+.contact-email {
+  color: #fff !important;
+}
 
+/* Make the home page flag image smaller */
+#home img[alt="Math My Money Flag"] {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
 
+p {
+  font-size: 1.13rem;
+  line-height: 1.7;
+}
 
+ul,
+ol {
+  font-size: 1.13rem;
+  line-height: 1.7;
+}
 
+li {
+  font-size: 1.13rem;
+  line-height: 1.7;
+}
 
+.pricing-list {
+  list-style: disc inside;
+  margin: 24px 0 24px 0;
+  padding: 0 0 0 1.5em;
+}
 
-
-
-
+.pricing-list li {
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: #181818;
+  border-radius: 8px;
+  padding: 12px 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  display: list-item;
+}

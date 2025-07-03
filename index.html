@@ -4,66 +4,70 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math My Money</title>
     <link rel="stylesheet" href="styles.css">
+
+    <base href="/">
 </head>
 
 <body>
-    <div class="container">
+    <header>
         <nav class="nav-bar-flex">
             <div class="nav-logo-box">
-                <a href="#home" onclick="showPage('home');return false;">
+                <a href="/">
                     <img src="images/MMM_Logo.png" alt="Math My Money Logo" class="nav-logo">
                 </a>
             </div>
-            <div class="nav-center-box">
-                <div class="hamburger" id="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-list">
-                    <li class="nav-item active" onclick="showPage('home')"><a href="#home">Home</a></li>
-                    <li class="nav-item" onclick="showPage('about')"><a href="#about">About</a></li>
-
-                    <li class="nav-item dropdown">
-                        <span class="dropdown-toggle">Services ▾</span>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item" onclick="showPage('coaching')"><a href="#coaching">Personal
-                                    Finance Coaching</a></li>
-                            <li class="dropdown-item" onclick="showPage('consulting')"><a href="#consulting">Business
-                                    Consulting</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" onclick="showPage('contact')"><a href="#contact">Contact</a></li>
-                    <li class="nav-item" style="background-color: #1976d2;"><a href="/personal-finance-game/"
-                            style="color: white;">Personal Finance Game</a></li>
-                </ul>
+            <div class="nav-logo-box">
+                <a href="/about.html">
+                    About
+                </a>
             </div>
-            <div class="nav-social-box"></div>
+            <div class="nav-logo-box">
+                <a href="/services/coaching.html">
+                    Coaching
+                </a>
+            </div>
+            <div class="nav-logo-box">
+                <a href="/services/consulting.html">
+                    Consulting
+                </a>
+            </div>
+            <!-- <div class="nav-logo-box">
+                <a href="/blog/index.html">
+                    Blog
+                </a>
+            </div> -->
+            <div class="nav-logo-box">
+                <a href="/personal-finance-game/index.html">
+                    Personal Finance Game
+                </a>
+            </div>
+            <div class="nav-logo-box">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </div>
         </nav>
-        <!-- Dropdown hover logic is now handled by CSS -->
-        <header>
-            <!-- Home page header content will be inserted in the home page below -->
-        </header>
+    </header>
 
-        <!-- HOME PAGE -->
-        <div id="home" class="page active">
-            <header>
-                <h1 class="site-title">Math My Money</h1>
-                <img src="images/MMM_Flag.png" alt="Math My Money Flag"
-                    style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);">
-            </header>
-            <p class="intro-text">
-                Welcome to Math My Money! My name is Zach and the goal here is to provide everyone with the personal
-                finance knowledge they need to succeed.
-                Most of us get thrown into "The Real World" without any formal education on how to make, save,
-                spend, invest, or think about money. Here you will find explanations and examples on a variety
-                of topics. Sorry but no get rich quick schemes :)
-            </p>
-        </div>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+
+        <h1 class="site-title">Math My Money</h1>
+        <img src="images/MMM_Flag.png" alt="Math My Money Flag">
+
+        <p class="intro-text">
+            Welcome to Math My Money! My name is Zach and the goal here is to provide everyone with the personal
+            finance knowledge they need to succeed.
+            Most of us get thrown into "The Real World" without any formal education on how to make, save,
+            spend, invest, or think about money. Here you will find explanations and examples on a variety
+            of topics. Check out the YouTube channel and social media for more content. Sorry but no get rich quick
+            schemes :)
+        </p>
     </div>
+
 
     <footer>
         <div class="footer-social-links">
@@ -81,49 +85,7 @@
     </footer>
 
     <script>
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            // Remove active class from nav items
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            // Add active class to clicked nav item
-            navItems.forEach(item => {
-                const a = item.querySelector('a');
-                if ((a && a.getAttribute('href') === '#' + pageId) || (!a && item.textContent.trim().toLowerCase() === pageId)) {
-                    item.classList.add('active');
-                }
-            });
-            // Scroll to very top of viewport, ignoring sticky nav bar and any offset
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-                // Also try resetting scroll on all parent containers
-                const containers = document.querySelectorAll('.container, .page');
-                containers.forEach(el => { el.scrollTop = 0; });
-            }, 0);
-        }
-        // Hash navigation support
-        window.addEventListener('DOMContentLoaded', () => {
-            if (window.location.hash) {
-                const page = window.location.hash.replace('#', '');
-                if (document.getElementById(page)) showPage(page);
-            }
-        });
-        window.addEventListener('hashchange', () => {
-            const page = window.location.hash.replace('#', '');
-            if (document.getElementById(page)) showPage(page);
-        });
-        // Hamburger menu
-        const hamburger = document.getElementById('hamburger-menu');
-        const navList = document.querySelector('.nav-list');
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('open');
-        });
+
     </script>
 </body>
 
