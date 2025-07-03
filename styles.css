@@ -199,6 +199,10 @@ footer, .footer, .mmm-footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
   background: #222;
 }
+.about-photo-row img:nth-child(1),
+.about-photo-row img:nth-child(2) {
+  object-position: top;
+}
 
 /* --- END CONTAINER AND PAGE STYLES --- */
 
