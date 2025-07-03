@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -7,6 +8,7 @@
     <title>Math My Money</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <nav class="nav-bar-flex">
@@ -28,12 +30,15 @@
                     <li class="nav-item dropdown">
                         <span class="dropdown-toggle">Services ▾</span>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-item" onclick="showPage('coaching')"><a href="#coaching">Personal Finance Coaching</a></li>
-                            <li class="dropdown-item" onclick="showPage('consulting')"><a href="#consulting">Business Consulting</a></li>
+                            <li class="dropdown-item" onclick="showPage('coaching')"><a href="#coaching">Personal
+                                    Finance Coaching</a></li>
+                            <li class="dropdown-item" onclick="showPage('consulting')"><a href="#consulting">Business
+                                    Consulting</a></li>
                         </ul>
                     </li>
                     <li class="nav-item" onclick="showPage('contact')"><a href="#contact">Contact</a></li>
-                    <li class="nav-item" style="background-color: #1976d2;"><a href="/personal-finance-game/" style="color: white;">Personal Finance Game</a></li>
+                    <li class="nav-item" style="background-color: #1976d2;"><a href="/personal-finance-game/"
+                            style="color: white;">Personal Finance Game</a></li>
                 </ul>
             </div>
             <div class="nav-social-box"></div>
@@ -42,195 +47,24 @@
         <header>
             <!-- Home page header content will be inserted in the home page below -->
         </header>
-        
+
         <!-- HOME PAGE -->
         <div id="home" class="page active">
             <header>
                 <h1 class="site-title">Math My Money</h1>
-                <img src="images/MMM_Flag.png" alt="Math My Money Flag" style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);">
+                <img src="images/MMM_Flag.png" alt="Math My Money Flag"
+                    style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);">
             </header>
             <p class="intro-text">
-                Welcome to Math My Money! My name is Zach and the goal here is to provide everyone with the personal finance knowledge they need to succeed. 
-                Most of us get thrown into "The Real World" without any formal education on how to make, save, 
-                spend, invest, or think about money. Here you will find explanations and examples on a variety 
+                Welcome to Math My Money! My name is Zach and the goal here is to provide everyone with the personal
+                finance knowledge they need to succeed.
+                Most of us get thrown into "The Real World" without any formal education on how to make, save,
+                spend, invest, or think about money. Here you will find explanations and examples on a variety
                 of topics. Sorry but no get rich quick schemes :)
             </p>
         </div>
-        
-        <!-- ABOUT PAGE -->
-        <div id="about" class="page">
-            <h1>About Zach, Founder & Content Creator</h1>
-            <div class="about-photo-row">
-                <img src="images/Baby_Chimney_Hat.png" alt="Baby Chimney Hat" class="about-photo">
-                <img src="images/Dreads.JPG" alt="Dreads" class="about-photo">
-                <img src="images/Goldenburger.JPG" alt="Goldenburger" class="about-photo">
-            </div>
-            <p>Zachariah Goldenberg has been a math nerd since the early 90s, he loves to solve problems and help people learn stuff.</p>
-            <p>Credentials wise, Zach graduated from Plymouth State University where he double majored in Mathematics and Political Science.
-                He then worked as a licensed financial representative at Fidelity Investments, an actuary at Liberty Mutual,
-                and as a solar sales energy consultant at Tesla.
-                He's currently a high school math teacher where he created a personal finance class that he teaches.
-                And he picked up his masters in data analytics to boot!</p>
-        </div>
-                
-        <!-- SERVICES PAGE -->
-        <div id="services" class="page">
-            <h1>Services</h1>
-            
-            <div class="service-card">
-                <h2>Personal Finance Coaching</h2>
-                <p>Feeling overwhelmed when it comes to money? How do you know if you're "on track", and what does that even mean?
-                    How should you even start? If you are ready for your money to work for you but don't know what to do, a 1-1 coaching session may be just the trick!</p>
-                <p>These sessions ARE NOT financial advice, they ARE coaching and education.</p>
-                <p>Interested? <a href="#" onclick="showPage('coaching')">Learn more here</a>.</p>
-            </div>
-            
-            <div class="service-card">
-                <h2>Business Consulting</h2>
-                <p>Are you working hard but your business is underperforming? Ever consider utilizing advanced analytics to drive business forward? Could a new perspective on a persistent problem help? If you want to optimize operations and maximize profitability, a consulting session may help to do so!</p>
-                <p>The reality is that hard problems require creative solutions. Details may differ from one situation to the next but the fundamentals do not. Identify issues, explore options, apply a solution, monitor the results, and iterate the process. That's my approach to problem solving.</p>
-                <p>Interested? <a href="#" onclick="showPage('consulting')">Learn more here</a>.</p>
-            </div>
-        </div>
-        
-        <!-- COACHING PAGE -->
-        <div id="coaching" class="page">
-            <h1>Personal Finance Coaching</h1>
-            
-            <p>Feeling overwhelmed when it comes to money? How do you know if you're "on track", and what does that even mean? How should you start? If you are ready for your money to work for you but don't know what to do, a 1-1 coaching session may be just the trick!</p>
-            
-            <p><strong>These sessions ARE NOT financial advice, they ARE coaching and education.</strong></p>
-            
-            <h2>Summary:</h2>
-            <p>Anyone offering financial advice should be approached with a healthy dose of skepticism, especially when it comes to investing. I don't promise untold riches or the next hot stock pick. I won't tell you what to do. I will help educate and explore options with you so that you can make the best decisions for yourself (because you're the only one who can make them). Think about how long you've spent researching and struggling to figure out what it is that you're currently focused on. How much easier and more efficient could that process be with my help? If I don't think I can add value then I'll say so and save us both the time.</p>
-            
-            <h3>Topics can include but are not limited to:</h3>
-            <ul>
-                <li>Debt (organize, eliminate, then celebrate)</li>
-                <li>Goal Setting (where do you want to be in 5, 10, 20 years)</li>
-                <li>Budgeting (how to make one and stick to it)</li>
-                <li>College and Career (should you go, where to go, and what to go for)</li>
-                <li>Investing (from stocks and bonds to cryptocurrencies and NFTs)</li>
-                <li>Real Estate (renting for yourself, buying a house, or rental properties)</li>
-                <li>Retirement (how much will you need and when)</li>
-            </ul>
-            
-            <h2>Disclaimer:</h2>
-            <p>I AM NOT a: financial advisor (SEC definition), broker-dealer (buy/sell securities), CFP (Certified Financial Planner), CPA (Certified Public Accountant), ChFC (Chartered Financial Consultant), or asset/fund/investment/portfolio manager. If you'd like to work with any of these fine folks go right ahead. Please make sure that they are acting as a fiduciary and not just following a suitability standard. I'm not at all offended if you don't want to work with me, but it's very important whoever you do work with has your best interests above their own.</p>
-            
-            <p>I AM a financial coach. This is a title that means basically nothing, seriously. I suggest that you treat me like a stranger from the internet, unless you know me in real life… in which case that would be weird. Look at my credentials/background, the content I create, and my motivations when deciding if you'd like to work with me.</p>
-            
-            <ul>
-                <li>I'm currently a math teacher (former securities trader, actuary, and sales consultant)</li>
-                <li>I've got my bachelor's degree in mathematics and political science and my masters degree in data analytics</li>
-                <li>I make personal finance content that explores the ideas and shows how things work rather than nonsense get rich schemes</li>
-                <li>I want to work with individuals who want to invest in themselves</li>
-                <li>I'm here to educate and explain, not to pretend I know everything and make empty promises</li>
-            </ul>
-            
-            <h2>Pricing:</h2>
-            <p>I have a mortgage, am a pretty big fan of electricity, and enjoy eating every day. Sessions like these are a way for me to work 1-1 with people while monetizing what I do so that I can continue producing videos and articles for free for everyone. Time is money! If the time we spend working together leads to you saving or earning at least what you paid, then it will have been worth it. That's the mutual goal and I'm confident we can achieve it.</p>
-            
-            <div class="pricing-grid">
-                <div class="pricing-item">
-                    <strong>25 minutes for $50</strong>
-                </div>
-                <div class="pricing-item">
-                    <strong>55 minutes for $100</strong>
-                </div>
-                <div class="pricing-item">
-                    <strong>1 hour and 25 minutes for $150</strong>
-                </div>
-                <div class="pricing-item">
-                    <strong>1 hour and 55 minutes for $200</strong>
-                </div>
-            </div>
-            
-            <h2>Requesting a Session:</h2>
-            <p>Currently sessions are on a request basis scheduled via email. Apologies in advance for any delayed responses in coordinating times. If you're interested or have further questions please contact: <a href="mailto:MathMyMoney@gmail.com?subject=Personal%20Finance%20Coaching" class="contact-email">MathMyMoney@gmail.com</a> with the subject "Personal Finance Coaching".</p>
-        </div>
-        
-        <!-- CONSULTING PAGE -->
-        <div id="consulting" class="page">
-            <h1>Business Consulting</h1>
-            
-            <p>Are you working hard but your business is underperforming? Ever consider utilizing advanced analytics to drive business forward? Could a new perspective on a persistent problem help? If you want to optimize operations and maximize profitability, a consulting session may help to do so!</p>
-            
-            <p>The reality is that hard problems require creative solutions. Details may differ from one situation to the next but the fundamentals do not. Identify issues, explore options, apply a solution, monitor the results, and iterate the process. That's my approach to problem solving.</p>
-            
-            <h2>Summary:</h2>
-            <p>To be of service to a business as a consultant one must learn quickly and think critically. I've had multiple roles which required mastery of highly complex products and procedures, that's where I bring the most value. Working in investments, insurance, sales, education, and consulting I've seen a number of different scenarios which out of the box thinking allowed me to excel. Every business has its own set of strengths and weaknesses. As a consultant I will help identify what those are and offer up actionable solutions to meet your goals.</p>
-            
-            <h3>Areas can include but are not limited to:</h3>
-            <ul>
-                <li>Operations, processes, and performance</li>
-                <li>Pricing and profitability</li>
-                <li>Data analytics and metrics</li>
-                <li>Research and strategic goals</li>
-                <li>Customer service</li>
-            </ul>
-            
-            <h2>Disclaimer:</h2>
-            <p>Most consultants work on a contract and there are no set qualifications. Only you know what your organization needs. If you're unsure of whether my expertise is the right fit, feel free to reach out and ask. If I don't think I can add value then I'll say so and save us both the time.</p>
-            
-            <p>Look at my experience, credentials/background, and the content I create when deciding if you'd like to work with me.</p>
-            
-            <p>Career:</p>
-
-            <ul>
-                <li>High school math teacher, created a personal finance course</li>
-                <li>Solar sales energy consultant, top agent in the country for my partner store</li>
-                <li>Actuary, life insurance and short term disability insurance</li>
-                <li>Financial representative, fully licensed (Series 7 and Series 63 exams) and worked with high net worth clients</li>               
-            </ul>
-            
-            <p>Education:</p>
-
-            <ul>
-                <li>Master's degree in data analytics, Southern New Hampshire University (distinguished scholar)</li>
-                <li>Bachelor's degree in mathematics and political science, Plymouth State University (summa cum laude)</li>
-            </ul>
-
-            <h2>Pricing:</h2>
-            <p>I have a mortgage, am a pretty big fan of electricity, and enjoy eating every day. Sessions like these are a way for me to work 1-1 with businesses while monetizing what I do so that I can continue producing videos and articles for free for everyone. Time is money! If the time we spend working together leads to you saving or earning at least what you paid, then it will have been worth it. That's the mutual goal and I'm confident we can achieve it.</p>
-            
-            <div class="pricing-grid">
-                <div class="pricing-item">
-                    <strong>25 minutes for $50</strong>
-                </div>
-                <div class="pricing-item">
-                    <strong>55 minutes for $100</strong>
-                </div>
-                <div class="pricing-item">
-                    <strong>1 hour and 25 minutes for $150</strong>
-                </div>
-                <div class="pricing-item">
-                    <strong>1 hour and 55 minutes for $200</strong>
-                </div>
-            </div>
-            
-            <p>If after an initial meeting you'd like to move forward on a contract, the pricing details will be set on a job specific basis.</p>
-            
-            <h2>Requesting a Session:</h2>
-            <p>Currently sessions are on a request basis scheduled via email. Apologies in advance for any delayed responses in coordinating times. If you're interested or have further questions please contact: <a href="mailto:mathmymoney@gmail.com?subject=Business%20Consulting" class="contact-email">MathMyMoney@gmail.com</a> with the subject "Business Consulting".</p>
-        </div>
-        
-        <!-- CONTACT PAGE -->
-        <div id="contact" class="page">
-            <h1>Contact</h1>
-            <div class="contact-info">
-                <p>If you have any questions or comments, please reach out on social media or send me an email. My apologies in advance for delayed response times!</p>
-                
-                <a href="mailto:MathMyMoney@gmail.com" class="contact-email">MathMyMoney@gmail.com</a>
-                
-                <div style="margin-top: 30px;">
-                    <a href="https://www.youtube.com/channel/UCp45HU-SmzB06CSAtRbPqbg" target="_blank" class="contact-email">YouTube</a>
-                    <a href="https://www.tiktok.com/@mathmymoney" target="_blank" class="contact-email">TikTok</a>
-                    <a href="https://www.instagram.com/mathmymoney/" target="_blank" class="contact-email">Instagram</a>
-                </div>
-            </div>
-        </div>
     </div>
+
     <footer>
         <div class="footer-social-links">
             <a href="https://www.youtube.com/channel/UCp45HU-SmzB06CSAtRbPqbg" target="_blank" class="social-link">
@@ -245,7 +79,7 @@
         </div>
         © 2021-2025 ZNG Media LLC. All rights reserved.
     </footer>
-    
+
     <script>
         function showPage(pageId) {
             // Hide all pages
@@ -292,4 +126,5 @@
         });
     </script>
 </body>
+
 </html>
