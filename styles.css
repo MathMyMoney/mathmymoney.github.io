@@ -186,7 +186,7 @@ footer, .footer, .mmm-footer {
 .about-photo-row {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 24px;
   margin: 24px 0 32px 0;
